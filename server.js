@@ -17,6 +17,9 @@ mongoose.connect(process.env.MONGOURI)
   .catch(err => console.error('DB connection error', err));
 
 // Routes setup
+app.get('/',(req, res) =>{
+  res.status(200).send('Server is Up and Running');
+})
 app.use('/api/auth', authRoutes);
 app.use('/api/tasks', taskRoutes);
 
